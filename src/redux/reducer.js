@@ -16,18 +16,18 @@ export default (state = initialState, action) => {
                 loadingUsers: true
             }
 
+        case 'todos/load/start':
+            return {
+                ...state,
+                loadingTodos: true
+            }
+
         case 'users/load/success':
             return {
                 ...state,
                 users: action.payload,
                 loadingUsers: false
             }    
-
-        case 'todos/load/start':
-            return {
-                ...state,
-                loadingTodos: true
-            }
 
         case 'todos/load/success':
             return {

@@ -19,10 +19,10 @@ useEffect(() => {
 if(loadingTodos || loadingUsers ) {
   return(
     <div>
-      loadings...
+      Загружается...
     </div>
   )
-}
+};
 
   return (
     <div className="container">

@@ -1,8 +1,10 @@
 function Todo(props) {
     return (
-        <div>
-            todos
-        </div>
+       <li>
+           <div className="title">
+                {props.todo.title}
+            </div>
+       </li>
     )
 }
 
