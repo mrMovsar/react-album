@@ -1,8 +1,15 @@
+import { useDispatch } from "react-redux";
+import { selectUser } from "../redux/actions";
 
 function User(props) {
+    const dispatch = useDispatch();
+
+    const handleSelectUser = () => {
+        dispatch(selectUser(props.user.id))
+    }
     
     return (
-        <li>
+        <li onClick={handleSelectUser}>
             <div className="user-name">
             {props.user.name}
             </div>

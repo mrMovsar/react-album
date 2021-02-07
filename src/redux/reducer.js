@@ -16,25 +16,38 @@ export default (state = initialState, action) => {
                 loadingUsers: true
             }
 
-        case 'todos/load/start':
-            return {
-                ...state,
-                loadingTodos: true
-            }
-
         case 'users/load/success':
             return {
                 ...state,
                 users: action.payload,
                 loadingUsers: false
+            } 
+
+        case 'users/select':
+            return {
+                ...state,
+                selectedUserId: action.payload 
             }    
+
+        case 'todos/load/start':
+            return {
+                ...state,
+                loadingTodos: true
+            }       
 
         case 'todos/load/success':
             return {
                 ...state,
-                users: action.payload,
+                todos: action.payload,
                 loadingTodos: false
-            }        
+            } 
+            
+        case 'filter/set': 
+            return {
+                ...state,
+                filter: action.payload
+            }
+
         default:
             return state;
     }

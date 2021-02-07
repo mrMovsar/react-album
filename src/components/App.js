@@ -19,7 +19,7 @@ useEffect(() => {
 if(loadingTodos || loadingUsers ) {
   return(
     <div>
-      Загружается...
+      <h1>Загружается...</h1>
     </div>
   )
 };

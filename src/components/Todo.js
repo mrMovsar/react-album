@@ -1,9 +1,7 @@
 function Todo(props) {
     return (
        <li>
-           <div className="title">
-                {props.todo.title}
-            </div>
+            {props.todo.title}
        </li>
     )
 }
