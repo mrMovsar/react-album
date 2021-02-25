@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Route } from "react-router-dom";
 import { loadTodos, loadUsers } from "../redux/actions";
 import Todos from "./Todos";
 import Users from "./Users";
@@ -27,7 +28,9 @@ if(loadingTodos || loadingUsers ) {
   return (
     <div className="container">
       <Users/>
-      <Todos/>
+      <Route exact path="/:id?">
+        <Todos/>
+      </Route>
     </div>
   );
 }

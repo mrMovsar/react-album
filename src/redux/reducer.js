@@ -1,6 +1,5 @@
 const initialState = {
     filter: "",
-    selectedUserId: null,
     users: [],
     todos: [],
 
@@ -22,12 +21,6 @@ export default (state = initialState, action) => {
                 users: action.payload,
                 loadingUsers: false
             } 
-
-        case 'users/select':
-            return {
-                ...state,
-                selectedUserId: action.payload 
-            }    
 
         case 'todos/load/start':
             return {

@@ -1,21 +1,17 @@
-import { useDispatch } from "react-redux";
-import { selectUser } from "../redux/actions";
+import { Link } from "react-router-dom";
 
 function User(props) {
-    const dispatch = useDispatch();
-
-    const handleSelectUser = () => {
-        dispatch(selectUser(props.user.id))
-    }
     
     return (
-        <li onClick={handleSelectUser}>
-            <div className="user-name">
-            {props.user.name}
-            </div>
-            <div className="user-email">
-            {props.user.email}
-            </div>
+        <li>
+            <Link to={`${props.user.id}`}>
+                <div className="user-name">
+                    {props.user.name}
+                </div>
+                <div className="user-email">
+                    {props.user.email}
+                </div>
+            </Link>
         </li>
     )
 }

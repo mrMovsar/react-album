@@ -1,17 +1,19 @@
 import { useDispatch, useSelector } from "react-redux"
 import Todo from "./Todo"
 import { setFilterText } from "../redux/actions";
+import { useParams } from "react-router-dom";
 
 function Todos() {
     const todos = useSelector(state => state.todos);
-    const selectedUserId = useSelector(state => state.selectedUserId);
+    
+    const id = parseInt(useParams().id); 
 
     const dispatch = useDispatch();
 
     const filter = useSelector(state => state.filter);
 
     const filteredTodos = todos
-        .filter(todo => todo.userId === selectedUserId)
+        .filter(todo => todo.userId === id)
         .filter(todo => todo.title.indexOf(filter) > -1)
         
 
@@ -19,7 +21,7 @@ function Todos() {
         dispatch(setFilterText(event.target.value))
     }
 
-    if(selectedUserId === null) {
+    if(!id) {
         return (
             <div className="no-selected-user">
                 Пожалуйста выберите пользователя

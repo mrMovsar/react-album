@@ -28,13 +28,6 @@ export const loadTodos = () => {
     }
 }
 
-export const selectUser = (userId) => {
-    return ({
-        type: 'users/select' ,
-        payload: userId
-    });
-}
-
 export const setFilterText = (text) => {
     return {
         type: 'filter/set',
